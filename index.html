@@ -78,13 +78,6 @@
 
     footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
 
-    /* Fade-In Animation */
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1.5s ease forwards;
-    }
-    @keyframes fadeIn { to { opacity: 1; } }
-
     /* Gradient + Glowing Main Title */
     .white-title {
       font-size: 60px;
@@ -97,12 +90,6 @@
         0 0 8px rgba(250,204,21,0.6),
         0 0 15px rgba(14,165,164,0.4),
         0 0 20px rgba(249,115,22,0.3);
-      animation: glowPulseTitle 2s ease-in-out infinite alternate;
-    }
-    @keyframes glowPulseTitle {
-      0% { text-shadow: 0 0 5px rgba(250,204,21,0.4), 0 0 10px rgba(14,165,164,0.3); }
-      50% { text-shadow: 0 0 12px rgba(250,204,21,0.8), 0 0 24px rgba(14,165,164,0.6); }
-      100% { text-shadow: 0 0 8px rgba(250,204,21,0.6), 0 0 16px rgba(14,165,164,0.5); }
     }
 
     /* Gradient + Glowing Subheading */
@@ -118,12 +105,6 @@
         0 0 5px rgba(250, 204, 21, 0.5),
         0 0 10px rgba(14, 165, 164, 0.4),
         0 0 15px rgba(249, 115, 22, 0.3);
-      animation: glowPulse 2s ease-in-out infinite alternate;
-    }
-    @keyframes glowPulse {
-      0% { text-shadow: 0 0 3px rgba(250,204,21,0.4), 0 0 6px rgba(14,165,164,0.3); }
-      50% { text-shadow: 0 0 8px rgba(250,204,21,0.8), 0 0 16px rgba(14,165,164,0.6); }
-      100% { text-shadow: 0 0 5px rgba(250,204,21,0.6), 0 0 10px rgba(14,165,164,0.5); }
     }
 
     /* Scroll Reveal for Course Cards */
@@ -150,8 +131,8 @@
   <div class="container">
     <!-- Header -->
     <header style="text-align:center;margin-bottom:40px;">
-      <h1 class="white-title fade-in">Exam Notification 2025</h1>
-      <p class="glowing-subtitle fade-in">This isn’t news. It’s your calling</p>
+      <h1 class="white-title">Exam Notification 2025</h1>
+      <p class="glowing-subtitle">This isn’t news. It’s your calling</p>
     </header>
 
     <!-- IIM Bangalore Section -->
