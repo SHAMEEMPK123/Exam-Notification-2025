@@ -22,6 +22,7 @@
     ul.meta li{padding:10px 0;border-bottom:1px dashed rgba(255,255,255,0.03);color:var(--muted)}
     ul.meta li strong{color:#fff}
 
+    /* Course Cards */
     .course{
       padding:12px;
       border-radius:10px;
@@ -30,12 +31,12 @@
       margin-bottom:10px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .course h3{margin:0;font-size:16px}
-    .course p{margin:6px 0 0;color:var(--muted);font-size:14px}
     .course:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 25px rgba(14, 165, 164, 0.4);
     }
+    .course h3{margin:0;font-size:16px}
+    .course p{margin:6px 0 0;color:var(--muted);font-size:14px}
 
     #backToTop{position:fixed;bottom:20px;right:20px;background:var(--accent);color:#012;padding:10px 14px;border-radius:50px;cursor:pointer;display:none;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:1000}
 
@@ -57,24 +58,30 @@
       margin: 0;
     }
 
-    /* Glowing Subtitle */
+    /* Gradient + Glowing Subheading */
     .glowing-subtitle {
       font-size: 18px;
       font-weight: 500;
-      color: #facc15;
       margin-top: 12px;
       letter-spacing: 1px;
+      background: linear-gradient(90deg, #f97316, #0ea5e9, #facc15);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       text-shadow:
-        0 0 5px rgba(250, 204, 21, 0.6),
-        0 0 10px rgba(250, 204, 21, 0.5),
-        0 0 15px rgba(250, 204, 21, 0.4);
+        0 0 5px rgba(250, 204, 21, 0.5),
+        0 0 10px rgba(14, 165, 164, 0.4),
+        0 0 15px rgba(249, 115, 22, 0.3);
       animation: glowPulse 2s ease-in-out infinite alternate;
     }
     @keyframes glowPulse {
-      0% { text-shadow: 0 0 3px rgba(250, 204, 21, 0.4), 0 0 6px rgba(250, 204, 21, 0.3); }
-      50% { text-shadow: 0 0 8px rgba(250, 204, 21, 0.8), 0 0 16px rgba(250, 204, 21, 0.6); }
-      100% { text-shadow: 0 0 5px rgba(250, 204, 21, 0.6), 0 0 10px rgba(250, 204, 21, 0.5); }
+      0% { text-shadow: 0 0 3px rgba(250,204,21,0.4), 0 0 6px rgba(14,165,164,0.3); }
+      50% { text-shadow: 0 0 8px rgba(250,204,21,0.8), 0 0 16px rgba(14,165,164,0.6); }
+      100% { text-shadow: 0 0 5px rgba(250,204,21,0.6), 0 0 10px rgba(14,165,164,0.5); }
     }
+
+    /* Scroll Reveal for Course Cards */
+    .scroll-reveal { opacity:0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .scroll-reveal.visible { opacity:1; transform: translateY(0); }
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
@@ -113,11 +120,11 @@
       </ul>
 
       <h3>Courses Offered</h3>
-      <div class="course">
+      <div class="course scroll-reveal">
         <h3>BSc Honours in Economics</h3>
         <p>With a Data Science minor.</p>
       </div>
-      <div class="course">
+      <div class="course scroll-reveal">
         <h3>BSc Honours in Data Science</h3>
         <p>With an Economics minor.</p>
       </div>
@@ -140,23 +147,23 @@
       </ul>
 
       <h3>Courses Offered</h3>
-      <div class="course">
+      <div class="course scroll-reveal">
         <h3>BA LLB</h3>
         <p>Bachelor of Arts + Bachelor of Law</p>
       </div>
-      <div class="course">
+      <div class="course scroll-reveal">
         <h3>BBA LLB</h3>
         <p>Bachelor of Business Administration + Bachelor of Law</p>
       </div>
-      <div class="course">
+      <div class="course scroll-reveal">
         <h3>BCom LLB</h3>
         <p>Bachelor of Commerce + Bachelor of Law</p>
       </div>
-      <div class="course">
+      <div class="course scroll-reveal">
         <h3>BSc LLB</h3>
         <p>Bachelor of Science + Bachelor of Law</p>
       </div>
-      <div class="course">
+      <div class="course scroll-reveal">
         <h3>BTech LLB</h3>
         <p>Bachelor of Technology + Bachelor of Law</p>
       </div>
@@ -169,11 +176,26 @@
     <div id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'});">↑ Top</div>
 
     <script>
+      // Back to Top button
       const backToTop = document.getElementById('backToTop');
       window.addEventListener('scroll', () => {
         if (window.scrollY > 300) backToTop.style.display = 'block';
         else backToTop.style.display = 'none';
       });
+
+      // Scroll Reveal for Course Cards
+      const revealElements = document.querySelectorAll('.scroll-reveal');
+      const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        revealElements.forEach(el => {
+          const elementTop = el.getBoundingClientRect().top;
+          if (elementTop < windowHeight - 50) {
+            el.classList.add('visible');
+          }
+        });
+      };
+      window.addEventListener('scroll', revealOnScroll);
+      window.addEventListener('load', revealOnScroll);
     </script>
   </div>
 </body>
