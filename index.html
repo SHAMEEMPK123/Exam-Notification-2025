@@ -22,32 +22,39 @@
     ul.meta li{padding:10px 0;border-bottom:1px dashed rgba(255,255,255,0.03);color:var(--muted)}
     ul.meta li strong{color:#fff}
 
-    .course{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.02);margin-bottom:10px}
+    .course{
+      padding:12px;
+      border-radius:10px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+      border:1px solid rgba(255,255,255,0.02);
+      margin-bottom:10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
     .course h3{margin:0;font-size:16px}
     .course p{margin:6px 0 0;color:var(--muted);font-size:14px}
+    .course:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(14, 165, 164, 0.4);
+    }
 
     #backToTop{position:fixed;bottom:20px;right:20px;background:var(--accent);color:#012;padding:10px 14px;border-radius:50px;cursor:pointer;display:none;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:1000}
 
     footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
 
-    /* Animated Gradient Title */
-    .animated-gradient-title {
+    /* Fade-In Animation */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+    }
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    /* White Title */
+    .white-title {
       font-size: 60px;
       font-weight: 800;
       letter-spacing: -1px;
-      background: linear-gradient(90deg, #f97316, #0ea5e9, #f97316);
-      background-size: 300% 100%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
+      color: #ffffff;
       margin: 0;
-      animation: gradientMove 5s linear infinite;
-    }
-
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
     }
 
     /* Glowing Subtitle */
@@ -63,42 +70,20 @@
         0 0 15px rgba(250, 204, 21, 0.4);
       animation: glowPulse 2s ease-in-out infinite alternate;
     }
-
     @keyframes glowPulse {
       0% { text-shadow: 0 0 3px rgba(250, 204, 21, 0.4), 0 0 6px rgba(250, 204, 21, 0.3); }
       50% { text-shadow: 0 0 8px rgba(250, 204, 21, 0.8), 0 0 16px rgba(250, 204, 21, 0.6); }
       100% { text-shadow: 0 0 5px rgba(250, 204, 21, 0.6), 0 0 10px rgba(250, 204, 21, 0.5); }
     }
 
-    /* Fade-In Animation */
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1.5s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-
     /* Responsive adjustments */
     @media (max-width: 768px) {
-      .animated-gradient-title {
-        font-size: 42px;
-        letter-spacing: -0.5px;
-      }
-      .glowing-subtitle {
-        font-size: 16px;
-      }
+      .white-title { font-size: 42px; letter-spacing: -0.5px; }
+      .glowing-subtitle { font-size: 16px; }
     }
-
     @media (max-width: 480px) {
-      .animated-gradient-title {
-        font-size: 32px;
-        letter-spacing: 0;
-      }
-      .glowing-subtitle {
-        font-size: 14px;
-      }
+      .white-title { font-size: 32px; letter-spacing: 0; }
+      .glowing-subtitle { font-size: 14px; }
     }
   </style>
 </head>
@@ -109,9 +94,9 @@
   </div>
 
   <div class="container">
-    <!-- Animated Header with Glow and Fade-In -->
+    <!-- Header -->
     <header style="text-align:center;margin-bottom:40px;">
-      <h1 class="animated-gradient-title fade-in">Exam Notification 2025</h1>
+      <h1 class="white-title fade-in">Exam Notification 2025</h1>
       <p class="glowing-subtitle fade-in">This isn’t news. It’s your calling</p>
     </header>
 
@@ -178,7 +163,7 @@
     </section>
 
     <footer>
-      <div>© 2025 Exam Notification Portal | Designed for quick academic updates | <a href="https://shameempk123.github.io/Personal-Website/" target="_blank">PK</a></div>
+      <div>© 2025 Exam Notification Portal | Designed for quick academic updates | <a href="https://yourwebsite.com" target="_blank">PK</a></div>
     </footer>
 
     <div id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'});">↑ Top</div>
