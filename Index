@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Exam notification 2025 — IIM Bangalore UG Programs</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#0ea5a4;--muted:#94a3b8;--glass:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:#e6eef6;background:linear-gradient(180deg,#071127 0%, #071a2a 60%);-webkit-font-smoothing:antialiased}
+    .container{max-width:980px;margin:40px auto;padding:24px}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700;color:#012;box-shadow:0 6px 20px rgba(4,7,14,0.6)}
+    h1{margin:0;font-size:28px;letter-spacing:-0.4px}
+    p.lead{color:var(--muted);margin:8px 0 0}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:20px;margin-top:20px;box-shadow:0 8px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    @media (max-width:880px){.grid{grid-template-columns:1fr} .logo{width:52px;height:52px}}
+
+    .section-title{display:flex;justify-content:space-between;align-items:center}
+    .pill{background:var(--glass);padding:6px 10px;border-radius:999px;font-weight:600;color:var(--accent);font-size:13px}
+
+    ul.meta{list-style:none;padding:0;margin:12px 0 0}
+    ul.meta li{padding:10px 0;border-bottom:1px dashed rgba(255,255,255,0.03);color:var(--muted)}
+    ul.meta li strong{color:#fff}
+
+    .courses{margin-top:12px}
+    .course{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.02);margin-bottom:10px}
+    .course h3{margin:0;font-size:16px}
+    .course p{margin:6px 0 0;color:var(--muted);font-size:14px}
+
+    .aside{position:relative}
+    .aside .box{padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+    .cta{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#06b6d4);color:#002; font-weight:700;text-decoration:none}
+
+    footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* small utilities */
+    .muted{color:var(--muted)}
+    .timestamp{font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">Ex</div>
+      <div>
+        <h1>Exam notification 2025</h1>
+        <p class="lead">Latest update — IIM Bangalore Undergraduate programs admissions timeline and details.</p>
+      </div>
+    </header>
+
+    <div class="card">
+      <div class="grid">
+        <main>
+          <div class="section-title">
+            <h2 style="margin:0">IIM Bangalore — New Undergraduate Programs (IIMB UG)</h2>
+            <div class="pill">Admissions — Oct 2025</div>
+          </div>
+
+          <p style="margin-top:12px;color:var(--muted)">IIM Bangalore’s new Undergraduate Programs will begin admissions in the third week of October 2025, with classes starting in August 2026.</p>
+
+          <section style="margin-top:18px">
+            <h3 style="margin:0 0 8px">Key Details</h3>
+            <ul class="meta">
+              <li><strong>End Date (Admissions):</strong> Application closes late October 2025.</li>
+              <li><strong>Eligibility:</strong> 12th grade pass (any stream), strong academic performance.</li>
+              <li><strong>Application Process:</strong> Online form available on the official IIMB UG admission portal.</li>
+            </ul>
+          </section>
+
+          <section class="courses">
+            <h3 style="margin-bottom:8px">Courses Offered</h3>
+            <div class="course">
+              <h3>BSc Honours in Economics</h3>
+              <p>With a Data Science minor.</p>
+            </div>
+            <div class="course">
+              <h3>BSc Honours in Data Science</h3>
+              <p>With an Economics minor.</p>
+            </div>
+          </section>
+
+          <section style="margin-top:18px">
+            <h3 style="margin-bottom:8px">Notes</h3>
+            <p class="muted">This page is a concise notification. For official application links, deadlines, and detailed eligibility criteria, always check the official IIM Bangalore UG admissions portal.</p>
+          </section>
+
+        </main>
+
+        <aside class="aside">
+          <div class="box">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <div>
+                <strong>Admissions window</strong>
+                <div class="timestamp muted">Third week — October 2025</div>
+              </div>
+            </div>
+
+            <p style="margin-top:12px" class="muted">Prepare documents: 12th marksheet, passport photo, identity proof, and any other certificates required by the application form.</p>
+
+            <a class="cta" href="#apply">Open application portal</a>
+
+            <div style="margin-top:12px;font-size:13px;color:var(--muted)">
+              <div><strong>Classes begin:</strong> August 2026</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <footer>
+        <div>Created for quick sharing — keep this page saved for reference.</div>
+      </footer>
+    </div>
+
+  </div>
+</body>
+</html>
