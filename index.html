@@ -8,10 +8,46 @@
     :root{--bg:#0f1724;--card:#0b1220;--accent:#0ea5a4;--muted:#94a3b8;--glass:rgba(255,255,255,0.03)}
     *{box-sizing:border-box;scroll-behavior:smooth;}
     body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:#e6eef6;background:linear-gradient(180deg,#071127 0%, #071a2a 60%);-webkit-font-smoothing:antialiased}
-    a{color:var(--accent);text-decoration:none;font-weight:600}
-    a:hover{text-decoration:underline}
+    a{color:var(--accent);text-decoration:none;font-weight:600;position:relative;transition: all 0.3s ease;}
+    a:hover{text-decoration:none;}
 
-    .topbar{position:sticky;top:0;z-index:1000;background:rgba(15,23,36,0.9);backdrop-filter:blur(6px);padding:10px 0;text-align:center;border-bottom:1px solid rgba(255,255,255,0.05);box-shadow:0 2px 8px rgba(0,0,0,0.3)}
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(15,23,36,0.9);
+      backdrop-filter:blur(6px);
+      padding:10px 0;
+      text-align:center;
+      border-bottom:1px solid rgba(255,255,255,0.05);
+      box-shadow:0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    /* Topbar link gradient underline + glow on hover */
+    .topbar a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #f97316, #0ea5e9, #facc15);
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform: scaleX(0);
+      transform-origin: left;
+      border-radius: 2px;
+    }
+    .topbar a:hover::after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    .topbar a:hover {
+      text-shadow:
+        0 0 4px #f97316,
+        0 0 8px #0ea5e9,
+        0 0 12px #facc15;
+    }
 
     .container{max-width:980px;margin:40px auto;padding:24px}
 
@@ -49,13 +85,24 @@
     }
     @keyframes fadeIn { to { opacity: 1; } }
 
-    /* White Title */
+    /* Gradient + Glowing Main Title */
     .white-title {
       font-size: 60px;
       font-weight: 800;
       letter-spacing: -1px;
-      color: #ffffff;
-      margin: 0;
+      background: linear-gradient(90deg, #f97316, #0ea5e9, #facc15);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow:
+        0 0 8px rgba(250,204,21,0.6),
+        0 0 15px rgba(14,165,164,0.4),
+        0 0 20px rgba(249,115,22,0.3);
+      animation: glowPulseTitle 2s ease-in-out infinite alternate;
+    }
+    @keyframes glowPulseTitle {
+      0% { text-shadow: 0 0 5px rgba(250,204,21,0.4), 0 0 10px rgba(14,165,164,0.3); }
+      50% { text-shadow: 0 0 12px rgba(250,204,21,0.8), 0 0 24px rgba(14,165,164,0.6); }
+      100% { text-shadow: 0 0 8px rgba(250,204,21,0.6), 0 0 16px rgba(14,165,164,0.5); }
     }
 
     /* Gradient + Glowing Subheading */
