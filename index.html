@@ -22,7 +22,36 @@
       border-bottom:1px solid rgba(255,255,255,0.05);
       box-shadow:0 2px 8px rgba(0,0,0,0.3);
     }
+/* Footer PK link gradient underline + glow on hover */
+footer a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #f97316, #0ea5e9, #facc15);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+  border-radius: 2px;
+}
 
+footer a:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+footer a:hover {
+  text-shadow:
+    0 0 4px #f97316,
+    0 0 8px #0ea5e9,
+    0 0 12px #facc15;
+  position: relative; /* Ensure pseudo-element positions correctly */
+}
+
+    
     /* Topbar link gradient underline + glow on hover */
     .topbar a::after {
       content: '';
