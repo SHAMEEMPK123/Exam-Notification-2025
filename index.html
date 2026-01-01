@@ -1,326 +1,354 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Exam Notification 2025-26 | Dashboard</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #030712;
+      --card-bg: rgba(17, 24, 39, 0.7);
+      --accent: #0ea5e9;
+      --accent-glow: rgba(14, 165, 233, 0.3);
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --border: rgba(255, 255, 255, 0.08);
+    }
 
-<title>Exam Notification 2025 | UG Entrance Exams</title>
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    
+    body {
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(79, 70, 229, 0.1) 0px, transparent 50%);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-<style>
-:root{
-  --bg:#060b18;
-  --card:#0f172a;
-  --accent:#22d3ee;
-  --accent2:#a78bfa;
-  --text:#e5e7eb;
-  --muted:#94a3b8;
-  --border:rgba(255,255,255,.06);
-}
+    /* Modern Navigation */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(3, 7, 18, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 15px;
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+    }
+    .topbar::-webkit-scrollbar { display: none; }
+    
+    .topbar a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid transparent;
+      transition: 0.3s;
+    }
+    .topbar a:hover {
+      color: var(--accent);
+      background: var(--accent-glow);
+      border-color: var(--accent);
+    }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+    .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
 
-body{
-  margin:0;
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto;
-  background:
-    radial-gradient(1000px 400px at top,#0b1c3d,transparent),
-    linear-gradient(180deg,#050816,#060a18);
-  color:var(--text);
-}
+    /* Hero Section */
+    header { text-align: center; margin-bottom: 80px; }
+    .white-title {
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      font-weight: 800;
+      margin: 0;
+      background: linear-gradient(to bottom, #fff 40%, #64748b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -2px;
+    }
+    .glowing-subtitle {
+      font-size: 1.2rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-top: 10px;
+      opacity: 0.8;
+    }
 
-/* ---------------- NAV ---------------- */
-nav{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(6,11,24,.8);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--border);
-}
-nav ul{
-  list-style:none;
-  display:flex;
-  gap:18px;
-  padding:12px 20px;
-  margin:0;
-  overflow-x:auto;
-}
-nav a{
-  color:#cbd5f5;
-  font-weight:600;
-  font-size:14px;
-  white-space:nowrap;
-}
-nav a:hover{color:var(--accent)}
+    /* High-Class Card Styling */
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 4px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
 
-/* ---------------- HERO ---------------- */
-.hero{
-  max-width:1100px;
-  margin:60px auto 40px;
-  padding:0 20px;
-  text-align:center;
-}
-.hero h1{
-  font-size:56px;
-  font-weight:800;
-  background:linear-gradient(90deg,#fff,#9ca3af);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-.hero p{
-  margin-top:12px;
-  font-size:18px;
-  letter-spacing:1px;
-  background:linear-gradient(90deg,#22d3ee,#a78bfa,#facc15);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
+    h2 { font-size: 2rem; margin-top: 0; color: #fff; }
+    h3 { color: var(--accent); font-size: 1.2rem; margin-top: 30px; }
 
-/* ---------------- LAYOUT ---------------- */
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:0 20px 60px;
-}
+    /* Meta Data List */
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      padding: 0;
+      list-style: none;
+      margin: 25px 0;
+    }
+    .meta li {
+      background: rgba(255,255,255,0.03);
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .meta li strong { display: block; color: var(--accent); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 5px; }
 
-/* ---------------- CARD ---------------- */
-.card{
-  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:28px;
-  margin-top:28px;
-  box-shadow:0 25px 60px rgba(0,0,0,.6);
-}
-.card h2{
-  margin-top:0;
-  color:var(--accent);
-}
-.card h2::after{
-  content:"";
-  display:block;
-  width:50px;
-  height:4px;
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
-  margin-top:6px;
-  border-radius:2px;
-}
+    /* Course Grid */
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .course {
+      background: rgba(255,255,255,0.03);
+      padding: 24px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .course:hover {
+      background: var(--accent-glow);
+      transform: translateY(-8px);
+      border-color: var(--accent);
+    }
+    .course h3 { margin: 0; color: #fff; font-size: 1.1rem; }
+    .course p { margin: 10px 0 0; color: var(--text-muted); font-size: 0.95rem; }
 
-.card p{color:#dbeafe}
+    /* Action Links */
+    .lead a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: #000;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+    .lead a:hover { transform: scale(1.05); box-shadow: 0 0 20px var(--accent-glow); }
 
-/* ---------------- META ---------------- */
-.meta{
-  list-style:none;
-  padding:0;
-}
-.meta li{
-  padding:10px 0;
-  border-bottom:1px dashed var(--border);
-  color:var(--muted);
-}
-.meta strong{color:#fff}
+    /* Footer */
+    footer {
+      padding: 60px 20px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .pk-link {
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+      padding: 2px 8px;
+      background: linear-gradient(90deg, #f97316, #0ea5e9);
+      border-radius: 4px;
+    }
 
-/* ---------------- COURSE BOX ---------------- */
-.course{
-  margin-top:14px;
-  padding:14px 16px;
-  border-radius:12px;
-  background:rgba(255,255,255,.04);
-  border:1px solid var(--border);
-  transition:.3s;
-}
-.course:hover{
-  transform:translateY(-4px);
-  box-shadow:0 12px 28px rgba(34,211,238,.35);
-}
-.course h3{
-  margin:0;
-  color:#fff;
-  font-size:16px;
-}
-.course p{
-  margin-top:6px;
-  color:var(--muted);
-  font-size:14px;
-}
+    /* Back to Top */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--accent);
+      color: #000;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+      z-index: 2000;
+      transition: 0.3s;
+      display: none;
+    }
 
-/* ---------------- FOOTER ---------------- */
-footer{
-  margin-top:40px;
-  text-align:center;
-  font-size:13px;
-  color:var(--muted);
-}
-footer a{color:#fff;font-weight:600}
+    /* Scroll Animations */
+    .scroll-reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+    .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* ---------------- BACK TO TOP ---------------- */
-#backToTop{
-  position:fixed;
-  bottom:24px;
-  right:24px;
-  background:linear-gradient(90deg,#22d3ee,#a78bfa);
-  color:#020617;
-  padding:12px 16px;
-  border-radius:999px;
-  font-weight:800;
-  border:none;
-  display:none;
-  cursor:pointer;
-}
-
-/* ---------------- RESPONSIVE ---------------- */
-@media(max-width:768px){
-  .hero h1{font-size:40px}
-}
-</style>
+    @media (max-width: 768px) {
+      .card { padding: 25px; }
+      .white-title { font-size: 2.8rem; }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- NAV -->
-<nav>
-<ul>
-  <li><a href="#indian-navy">Indian Navy</a></li>
-  <li><a href="#nchmjee">NCHM JEE</a></li>
-  <li><a href="#manipal-exam">Manipal</a></li>
-  <li><a href="#amrita-aeee">Amrita AEEE</a></li>
-  <li><a href="#lpu-brand">LPU</a></li>
-  <li><a href="#upes-test">UPES</a></li>
-  <li><a href="#bitsdat">BITSDAT</a></li>
-  <li><a href="#jeemain">JEE Main</a></li>
-  <li><a href="#uceed">UCEED</a></li>
-  <li><a href="#viteee">VITEEE</a></li>
-  <li><a href="#iimb">IIMB</a></li>
-  <li><a href="#clat">CLAT</a></li>
-</ul>
-</nav>
+  <nav class="topbar">
+    <a href="#indian-navy">Indian Navy</a>
+    <a href="#jeemain">JEE Main</a>
+    <a href="#viteee">VITEEE</a>
+    <a href="#uceed">UCEED</a>
+    <a href="#nchmjee">NCHM JEE</a>
+    <a href="#manipal-exam">Manipal</a>
+    <a href="#amrita-aeee">Amrita</a>
+    <a href="#lpu-brand">LPU</a>
+    <a href="#upes-brand">UPES</a>
+    <a href="#nid-dat">NID DAT</a>
+    <a href="#bitsdat">BITSDAT</a>
+    <a href="#iimb">IIM Bangalore</a>
+    <a href="#clat">CLAT</a>
+  </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <h1>Exam Notification 2025</h1>
-  <p>This isn’t news. It’s your calling.</p>
-</section>
+  <div class="container">
+    <header>
+      <h1 class="white-title">Exam Notifications</h1>
+      <p class="glowing-subtitle">Your Future Starts Here • 2025-26</p>
+    </header>
 
-<div class="container">
+    <section id="indian-navy" class="card scroll-reveal">
+      <h2>Indian Navy Recruitment (SSC)</h2>
+      <p>The Indian Navy invites applications for Short Service Commission (SSC) entry in various branches. Serve the nation in Executive, Technical, and Education roles.</p>
+      
+      <ul class="meta">
+        <li><strong>Opens</strong> January 03, 2026</li>
+        <li><strong>Closes</strong> January 19, 2026</li>
+        <li><strong>Eligibility</strong> Unmarried Male/Female Graduates</li>
+      </ul>
 
-<!-- 🔹🔹🔹 YOUR ENTIRE ORIGINAL EXAM CONTENT STARTS HERE 🔹🔹🔹 -->
+      <div class="course-grid">
+        <div class="course">
+          <h3>Executive Branch</h3>
+          <p>General Service, Naval Air Operations, and Logistics roles.</p>
+        </div>
+        <div class="course">
+          <h3>Technical & Education</h3>
+          <p>Engineering and Postgraduate roles in naval technology.</p>
+        </div>
+      </div>
+      <p class="lead"><a href="https://www.joinindiannavy.gov.in/" target="_blank">Visit Official Portal</a></p>
+    </section>
 
-<!-- ✅ EVERYTHING BELOW IS UNCHANGED DATA -->
+    <section id="jeemain" class="card scroll-reveal">
+      <h2>JEE Main 2026</h2>
+      <p>The national-level test for B.E./B.Tech, B.Arch, and B.Planning programs at NITs, IIITs, and CFTIs.</p>
+      
+      <ul class="meta">
+        <li><strong>Application</strong> 31 Oct - 27 Nov 2025</li>
+        <li><strong>Exam Dates</strong> 21 Jan - 30 Jan 2026</li>
+        <li><strong>Results</strong> 12 Feb 2026 (Tentative)</li>
+      </ul>
 
-<!-- Indian Navy -->
-<section id="indian-navy" class="card">
-  <h2>Indian Navy Recruitment – Short Service Commission (SSC)</h2>
-  <p>The Indian Navy invites applications from eligible candidates for Short Service Commission (SSC) entry in various branches.</p>
-  <ul class="meta">
-    <li><strong>Application Start:</strong> January 03, 2026</li>
-    <li><strong>Last Date:</strong> January 19, 2026</li>
-    <li><strong>Eligibility:</strong> As per branch norms</li>
-  </ul>
-</section>
+      <div class="course-grid">
+        <div class="course">
+          <h3>B.E. / B.Tech Programs</h3>
+          <p>CS, ECE, Mechanical, Civil, and AI specializations.</p>
+        </div>
+        <div class="course">
+          <h3>B.Arch & B.Planning</h3>
+          <p>Specialized Paper 2A and 2B for design and planning.</p>
+        </div>
+      </div>
+      <p class="lead"><a href="https://jeemain.nta.nic.in/" target="_blank">Official Website</a></p>
+    </section>
 
-<!-- NCHM JEE -->
-<section id="nchmjee" class="card">
-  <h2>NCHM JEE 2026</h2>
-  <ul class="meta">
-    <li><strong>Exam Date:</strong> April 25, 2026</li>
-    <li><strong>Last Date:</strong> January 25, 2026</li>
-    <li><strong>Mode:</strong> Online</li>
-  </ul>
-</section>
+    <section id="lpu-brand" class="card scroll-reveal">
+      <h2>LPU Admissions 2026</h2>
+      <p>Lovely Professional University offers wide-ranging programs through LPUNEST and national scores.</p>
+      <ul class="meta">
+        <li><strong>Test Name</strong> LPUNEST 2026</li>
+        <li><strong>Scholarships</strong> Merit-based available</li>
+        <li><strong>Mode</strong> Online / Center-based</li>
+      </ul>
+      <div class="course-grid">
+        <div class="course">
+          <h3>Engineering & Tech</h3>
+          <p>B.Tech and M.Tech in emerging industry disciplines.</p>
+        </div>
+        <div class="course">
+          <h3>Management & Law</h3>
+          <p>Placement-focused curriculum with industry mentoring.</p>
+        </div>
+      </div>
+      <p class="lead"><a href="https://www.lpu.in/" target="_blank">Apply at LPU</a></p>
+    </section>
 
-<!-- Manipal -->
-<section id="manipal-exam" class="card">
-  <h2>Manipal Entrance Exam 2026</h2>
-  <ul class="meta">
-    <li><strong>Last Date:</strong> March 15, 2026</li>
-    <li><strong>Exam Mode:</strong> Online</li>
-  </ul>
-</section>
+    <section id="nid-dat" class="card scroll-reveal">
+      <h2>NID DAT 2026</h2>
+      <p>Entrance for B.Des and M.Des programmes across various NID campuses.</p>
+      <ul class="meta">
+        <li><strong>Last Date</strong> 1 Dec 2025</li>
+        <li><strong>Prelims Date</strong> 21 Dec 2025</li>
+        <li><strong>Results</strong> 7 April 2026</li>
+      </ul>
+      <p class="lead"><a href="https://admissions.nid.edu/" target="_blank">NID Portal</a></p>
+    </section>
 
-<!-- Amrita -->
-<section id="amrita-aeee" class="card">
-  <h2>Amrita AEEE 2026</h2>
-  <ul class="meta">
-    <li><strong>Last Date:</strong> January 15, 2026</li>
-    <li><strong>Exam Window:</strong> Jan 30 – Feb 01, 2026</li>
-  </ul>
-</section>
+    <section id="clat" class="card scroll-reveal">
+      <h2>CLAT 2025-26</h2>
+      <p>Common Law Admission Test for prestigious National Law Universities.</p>
+      <ul class="meta">
+        <li><strong>Exam Date</strong> 7 Dec 2025</li>
+        <li><strong>Applications Close</strong> 31 Oct 2025</li>
+        <li><strong>Mode</strong> Offline (Pen & Paper)</li>
+      </ul>
+      <div class="course-grid">
+        <div class="course"><h3>UG Programs</h3><p>BA LLB, BBA LLB, BSc LLB</p></div>
+        <div class="course"><h3>PG Programs</h3><p>LLM (Master of Laws)</p></div>
+      </div>
+      <p class="lead"><a href="https://consortiumofnlus.ac.in/" target="_blank">Official CLAT Site</a></p>
+    </section>
 
-<!-- LPU -->
-<section id="lpu-brand" class="card">
-  <h2>LPU Admissions 2026</h2>
-  <p>Admissions via LPUNEST and national exams.</p>
-</section>
+    <footer>
+      <p>© 2025 Exam Notification Portal</p>
+      <p>Designed for quick academic updates by <a href="#" class="pk-link">PK</a></p>
+    </footer>
 
-<!-- UPES -->
-<section id="upes-test" class="card">
-  <h2>UPES Entrance Test 2026</h2>
-  <p>UPESEAT, UPESMET and other exams.</p>
-</section>
+  </div>
 
-<!-- BITSDAT -->
-<section id="bitsdat" class="card">
-  <h2>BITSDAT 2026</h2>
-  <ul class="meta">
-    <li><strong>Exam Window:</strong> 31 Mar – 05 Apr 2026</li>
-  </ul>
-</section>
+  <div id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'});">↑</div>
 
-<!-- JEE MAIN -->
-<section id="jeemain" class="card">
-  <h2>JEE Main 2026</h2>
-  <ul class="meta">
-    <li><strong>Exam Window:</strong> 21 – 30 January 2026</li>
-  </ul>
-</section>
+  <script>
+    // Reveal animation
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, observerOptions);
 
-<!-- UCEED -->
-<section id="uceed" class="card">
-  <h2>UCEED 2026</h2>
-  <ul class="meta">
-    <li><strong>Exam Date:</strong> January 18, 2026</li>
-  </ul>
-</section>
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
 
-<!-- VITEEE -->
-<section id="viteee" class="card">
-  <h2>VITEEE 2026</h2>
-  <ul class="meta">
-    <li><strong>Exam:</strong> April – May 2026</li>
-  </ul>
-</section>
-
-<!-- IIMB -->
-<section id="iimb" class="card">
-  <h2>IIM Bangalore UG Admissions</h2>
-  <ul class="meta">
-    <li><strong>Exam:</strong> December 13, 2025</li>
-  </ul>
-</section>
-
-<!-- CLAT -->
-<section id="clat" class="card">
-  <h2>CLAT 2026</h2>
-  <ul class="meta">
-    <li><strong>Exam Date:</strong> December 7, 2025</li>
-  </ul>
-</section>
-
-</div>
-
-<footer>
-© 2025 Exam Notification Portal • Designed for students | <a href="#">PK</a>
-</footer>
-
-<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-
-<script>
-const b=document.getElementById("backToTop");
-window.addEventListener("scroll",()=>{
-  b.style.display=window.scrollY>300?"block":"none";
-});
-</script>
-
+    // Back to top
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('backToTop');
+      btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+    });
+  </script>
 </body>
 </html>
