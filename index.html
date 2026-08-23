@@ -1,210 +1,256 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Exam Notification 2025</title>
-  <style>
-    :root{--bg:#0f1724;--card:#0b1220;--accent:#0ea5a4;--muted:#94a3b8;--glass:rgba(255,255,255,0.03)}
-    *{box-sizing:border-box;scroll-behavior:smooth;}
-    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:#e6eef6;background:linear-gradient(180deg,#071127 0%, #071a2a 60%);-webkit-font-smoothing:antialiased}
-    a{color:var(--accent);text-decoration:none;font-weight:600;position:relative;transition: all 0.3s ease;}
-    a:hover{text-decoration:none;}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content="Exam notifications, admission updates and important academic opportunities." />
+<title>Exam Notifications | Priority & Archive</title>
 
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:rgba(15,23,36,0.9);
-      backdrop-filter:blur(6px);
-      padding:10px 0;
-      text-align:center;
-      border-bottom:1px solid rgba(255,255,255,0.05);
-      box-shadow:0 2px 8px rgba(0,0,0,0.3);
-    }
-/* Footer PK link gradient underline + glow on hover */
-footer a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, #f97316, #0ea5e9, #facc15);
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  transform: scaleX(0);
-  transform-origin: left;
-  border-radius: 2px;
+<style>
+:root{
+  --bg:#07111f;
+  --bg2:#0b1628;
+  --panel:rgba(15,27,45,.82);
+  --panel-strong:#101e33;
+  --border:rgba(148,163,184,.16);
+  --text:#e8eef7;
+  --muted:#91a1b8;
+  --white:#fff;
+  --primary:#38bdf8;
+  --primary2:#6366f1;
+  --success:#22c55e;
+  --warning:#f59e0b;
+  --shadow:0 20px 70px rgba(0,0,0,.34);
 }
-
-footer a:hover::after {
-  opacity: 1;
-  transform: scaleX(1);
+*{box-sizing:border-box;scroll-behavior:smooth}
+html{background:var(--bg)}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 10% -10%,rgba(56,189,248,.16),transparent 30%),
+    radial-gradient(circle at 90% 0%,rgba(99,102,241,.18),transparent 30%),
+    linear-gradient(180deg,var(--bg),var(--bg2) 55%,#07111f);
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
 }
-
-footer a:hover {
-  text-shadow:
-    0 0 4px #f97316,
-    0 0 8px #0ea5e9,
-    0 0 12px #facc15;
-  position: relative; /* Ensure pseudo-element positions correctly */
+a{color:#67e8f9;text-decoration:none;font-weight:650}
+a:hover{color:#fff}
+button,input{font:inherit}
+.container{width:min(1180px,calc(100% - 32px));margin:0 auto}
+.topbar{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(5,12,23,.76);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
-
-    
-    /* Topbar link gradient underline + glow on hover */
-    .topbar a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, #f97316, #0ea5e9, #facc15);
-      opacity: 0;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      transform: scaleX(0);
-      transform-origin: left;
-      border-radius: 2px;
-    }
-    .topbar a:hover::after {
-      opacity: 1;
-      transform: scaleX(1);
-    }
-    .topbar a:hover {
-      text-shadow:
-        0 0 4px #f97316,
-        0 0 8px #0ea5e9,
-        0 0 12px #facc15;
-    }
-
-    .container{max-width:980px;margin:40px auto;padding:24px}
-
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:20px;margin-top:20px;box-shadow:0 8px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
-
-    h2{color:var(--accent)}
-    ul.meta{list-style:none;padding:0;margin:12px 0 0}
-    ul.meta li{padding:10px 0;border-bottom:1px dashed rgba(255,255,255,0.03);color:var(--muted)}
-    ul.meta li strong{color:#fff}
-
-    /* Course Cards */
-    .course{
-      padding:12px;
-      border-radius:10px;
-      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
-      border:1px solid rgba(255,255,255,0.02);
-      margin-bottom:10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .course:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(14, 165, 164, 0.4);
-    }
-    .course h3{margin:0;font-size:16px}
-    .course p{margin:6px 0 0;color:var(--muted);font-size:14px}
-
-    #backToTop{position:fixed;bottom:20px;right:20px;background:var(--accent);color:#012;padding:10px 14px;border-radius:50px;cursor:pointer;display:none;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:1000}
-
-    footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
-
-    /* Gradient + Glowing Main Title */
-    
-.white-title {
-  font-size: 60px;
-  font-weight: 800;
-  letter-spacing: -1px;
-  background: linear-gradient(90deg, #ffffff, #b0b0b0); /* White to gray gradient */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 2px rgba(255,255,255,0.2); /* Very subtle shadow */
+.nav{
+  min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;
 }
+.brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;letter-spacing:-.3px}
+.brand-mark{
+  width:34px;height:34px;border-radius:11px;
+  display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--primary),var(--primary2));
+  box-shadow:0 8px 24px rgba(56,189,248,.22);
+}
+.nav-links{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.nav-links a{
+  padding:8px 11px;border-radius:999px;color:#b9c6d8;font-size:13px;
+  transition:.2s ease;
+}
+.nav-links a:hover{background:rgba(255,255,255,.07);color:#fff}
 
+.hero{padding:68px 0 34px}
+.hero-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:24px;align-items:end}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 11px;border:1px solid rgba(56,189,248,.22);
+  background:rgba(56,189,248,.07);border-radius:999px;
+  color:#8be5ff;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--success);box-shadow:0 0 12px var(--success)}
+h1{
+  margin:18px 0 10px;font-size:clamp(42px,6vw,74px);line-height:.98;letter-spacing:-.055em;
+  background:linear-gradient(100deg,#fff 0%,#dbeafe 45%,#7dd3fc 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p{margin:0;color:var(--muted);font-size:17px;line-height:1.7;max-width:760px}
+.hero-card{
+  background:linear-gradient(145deg,rgba(56,189,248,.12),rgba(99,102,241,.09));
+  border:1px solid rgba(125,211,252,.17);border-radius:22px;padding:22px;box-shadow:var(--shadow);
+}
+.hero-card .big{font-size:36px;font-weight:850;color:#fff;line-height:1}
+.hero-card small{display:block;color:var(--muted);margin-top:8px}
 
-    /* Gradient + Glowing Subheading */
-    .glowing-subtitle {
-      font-size: 18px;
-      font-weight: 500;
-      margin-top: 12px;
-      letter-spacing: 1px;
-      background: linear-gradient(90deg, #f97316, #0ea5e9, #facc15);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow:
-        0 0 5px rgba(250, 204, 21, 0.5),
-        0 0 10px rgba(14, 165, 164, 0.4),
-        0 0 15px rgba(249, 115, 22, 0.3);
-    }
+.toolbar{
+  position:sticky;top:64px;z-index:900;padding:14px 0;
+  background:rgba(7,17,31,.72);backdrop-filter:blur(16px);
+}
+.toolbar-inner{display:flex;gap:12px;align-items:center}
+.search{
+  flex:1;min-width:0;background:rgba(255,255,255,.055);border:1px solid var(--border);
+  color:#fff;border-radius:14px;padding:13px 15px;outline:none;
+}
+.search:focus{border-color:rgba(56,189,248,.5);box-shadow:0 0 0 4px rgba(56,189,248,.08)}
+.filter-btn{
+  border:1px solid var(--border);background:rgba(255,255,255,.055);color:#c8d3e1;
+  padding:12px 15px;border-radius:14px;cursor:pointer;font-weight:750;
+}
+.filter-btn.active,.filter-btn:hover{background:linear-gradient(135deg,#0ea5e9,#6366f1);border-color:transparent;color:#fff}
 
-    /* Scroll Reveal for Course Cards */
-    .scroll-reveal { opacity:0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
-    .scroll-reveal.visible { opacity:1; transform: translateY(0); }
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:38px 0 14px}
+.section-head h2{margin:0;font-size:28px;letter-spacing:-.025em}
+.section-head p{margin:0;color:var(--muted);font-size:14px}
 
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .white-title { font-size: 42px; letter-spacing: -0.5px; }
-      .glowing-subtitle { font-size: 16px; }
-    }
-    @media (max-width: 480px) {
-      .white-title { font-size: 32px; letter-spacing: 0; }
-      .glowing-subtitle { font-size: 14px; }
-    }
-  </style>
+.priority-wrap{
+  position:relative;padding:1px;border-radius:26px;
+  background:linear-gradient(135deg,rgba(56,189,248,.7),rgba(99,102,241,.65),rgba(34,197,94,.5));
+  box-shadow:0 25px 90px rgba(37,99,235,.14);
+}
+.priority-wrap::before{
+  content:"";position:absolute;inset:-1px;border-radius:26px;
+  background:linear-gradient(135deg,rgba(56,189,248,.22),transparent 55%,rgba(99,102,241,.22));
+  filter:blur(22px);z-index:-1;
+}
+.priority-wrap section.card{
+  margin:0;border:0;border-radius:25px;background:linear-gradient(145deg,#0d1d32,#0a1525);
+}
+.priority-badge{
+  display:inline-flex;align-items:center;gap:7px;margin-bottom:12px;
+  background:rgba(34,197,94,.11);color:#86efac;border:1px solid rgba(34,197,94,.2);
+  padding:6px 10px;border-radius:999px;font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.07em;
+}
+.priority-badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--success)}
+
+.archive-grid{display:grid;gap:12px}
+.archive-item{
+  border:1px solid var(--border);border-radius:18px;overflow:hidden;
+  background:rgba(255,255,255,.025);transition:.2s ease;
+}
+.archive-item:hover{border-color:rgba(125,211,252,.25);background:rgba(255,255,255,.035)}
+.archive-item summary{
+  list-style:none;cursor:pointer;padding:19px 20px;display:flex;justify-content:space-between;
+  align-items:center;gap:18px;font-weight:750;
+}
+.archive-item summary::-webkit-details-marker{display:none}
+.archive-title{font-size:15px;line-height:1.45}
+.archive-arrow{font-size:22px;color:#7dd3fc;transition:.2s ease}
+.archive-item[open] .archive-arrow{transform:rotate(45deg)}
+.archive-content{padding:0 14px 14px}
+.archive-content section.card{
+  margin:0;border-radius:16px;background:rgba(7,17,31,.62);box-shadow:none;
+  border:1px solid rgba(148,163,184,.1);
+}
+.archive-content section.card h2{font-size:24px}
+
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));
+  border:1px solid var(--border);border-radius:20px;padding:24px;margin-top:20px;
+  box-shadow:0 14px 45px rgba(2,6,23,.25);
+}
+.card h2{color:#7dd3fc;margin-top:0;line-height:1.25}
+.card h3{color:#dbeafe;margin-top:24px}
+.card p{color:#b3c0d1;line-height:1.7}
+.card p.lead{color:#d6e2ef}
+ul.meta{list-style:none;padding:0;margin:12px 0 0}
+ul.meta li{
+  padding:12px 0;border-bottom:1px dashed rgba(148,163,184,.12);color:var(--muted);line-height:1.55
+}
+ul.meta li strong{color:#fff}
+.course{
+  padding:15px;border-radius:14px;background:rgba(255,255,255,.025);
+  border:1px solid rgba(148,163,184,.1);margin-bottom:10px;
+}
+.course h3{margin:0;font-size:16px;color:#dbeafe}
+.course p{margin:7px 0 0;font-size:14px}
+.scroll-reveal{opacity:1;transform:none}
+.archive-content section.card .scroll-reveal{opacity:1;transform:none}
+
+footer{margin:50px 0 28px;text-align:center;color:#718198;font-size:13px}
+footer a{color:#cbd5e1}
+#backToTop{
+  position:fixed;right:20px;bottom:20px;display:none;z-index:1100;
+  border:0;border-radius:999px;padding:12px 16px;cursor:pointer;font-weight:850;
+  color:#06111f;background:linear-gradient(135deg,#7dd3fc,#818cf8);
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+.empty{display:none;text-align:center;padding:40px;color:var(--muted)}
+
+@media(max-width:850px){
+  .hero-grid{grid-template-columns:1fr}
+  .nav{align-items:flex-start;padding:10px 0;flex-direction:column}
+  .nav-links{justify-content:flex-start}
+  .toolbar{top:104px}
+}
+@media(max-width:560px){
+  .container{width:min(100% - 20px,1180px)}
+  .hero{padding-top:42px}
+  .hero-card{padding:18px}
+  .toolbar-inner{flex-direction:column;align-items:stretch}
+  .filter-btn{width:100%}
+  .card{padding:18px}
+  .archive-content{padding:0 8px 8px}
+}
+</style>
 </head>
-<body>
-  <div class="topbar">
-    <a href="#iimb">Go to IIM Bangalore Section ↓</a> |
-    <a href="#clat">Go to CLAT Section ↓</a> |
-     <a href="#viteee">Go to VITEEE 2026 Section ↓</a> |
-     <a href="#uceed">Go to UCEED 2026 Section ↓</a> |
-     <a href="#jeemain">Go to JEE Main 2026(P-1) Section ↓</a> |
-    <a href="#bitsdat">Go to BITSDAT 2026 Section ↓</a> |
-    <a href="#upes-test">Go to UPES 2026 Section ↓</a> |
-    <a href="#nid-dat">Go to NID 2026 Section ↓</a> |
-    <a href="#amity-admissions">Go to AMITY 2026 Section ↓</a> |
-     <a href="#lpu-brand">Go to LPU 2026 Section ↓</a> |
-     <a href="#amrita-aeee">Go to Amrita Entrance Examination
-Engineering (AEEE) ↓</a> |
-     <a href="#manipal-exam">Go to MANIPAL 2026 Section ↓</a> |
-      <a href="#nchmjee">Go to NCHM JEE 2026 Section ↓</a> |
-   <a href="#indian-navy">Go to Indian Navy Recruitment ↓</a> |
-    <a href="#cuet-ug-2026">Go to CUET 2026 ↓</a> |
-    <a href="#keam-2026">Go to KEAM 2026 ↓</a> |
-     <a href="#kcet-2026">Go to KCET 2026 ↓</a> |
-     <a href="#cusat-cat-2026">Go to CUSAT CAT 2026 ↓</a> |
-      <a href="#neet-ug-2026">Go to NEET UG 2026 ↓</a> |
-    <a href="#iim-indore-ipm-2026">Go to IIM Indore IPM 2026-31 ↓</a> |
-  <a href="#iiser-admissions-2026">Go to IISER Admission 2026 Section ↓</a> |
- <a href="#niser-admission-2026">Go to NISER Admission 2026 ↓</a> |
-     <a href="#iim-rohtak-ipm-2026">Go to IIM Rohtak IPM 2026 ↓</a> |
-     <a href="#ncet-2026">Go to NCET 2026 ↓</a> |
-     <a href="#iimk-bms-2026">Go to IIMK BMS 2026 ↓</a> |
-      <a href="#amu-admissions-2026">Go to AMU Entrance Exam 2026 ↓</a> |
-    <a href="#jmi-admission-2026">Go to JMI Admission 2026-27 ↓</a> |
-     <a href="#isi-admission-2026">Go to ISI Admission 2026 ↓</a> |
-     <a href="#cmc-vellore-summer-2026">Go to CMC Vellore Summer Admissions 2026 ↓</a> |
- <a href="#bsc-allied">AIIMS B.Sc Allied & Health Care Courses 2026 ↓</a> |
-     <a href="#jipmat">JIPMAT 2026 Section ↓</a> |
-    <a href="#aiish-2026">AIISH Entrance Examination 2026 Section ↓</a> |
-     <a href="#nimhans-ug-calendar-2026">NIMHANS UG 2025-26 Section ↓</a> |
-     <a href="#iiml-bs-ai-2026">IIM Lucknow BS (AI & BA) 2026 Section ↓</a> |
-    <a href="#svnirtar-cet-2026">SVNIRTAR CET 2026 Section ↓</a> |
-     <a href="#nfsc-btech-2026">NFSC B.Tech Fire Engineering 2026 Section ↓</a> |
-      <a href="#iimb-ug">IIM Bangalore UG Admissions 2026-27↓</a> |
 
-    
-    
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="#">
+      <span class="brand-mark">✦</span>
+      <span>Exam Notification Portal</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#priority">Priority</a>
+      <a href="#archive">Previous Notifications</a>
+      <a href="#footer">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span> Live academic dashboard</span>
+        <h1>Exam Notifications</h1>
+        <p>This isn’t news. It’s your calling</p>
+        <p style="margin-top:10px;font-size:14px;">
+          Newly added notifications are kept at the top as priority updates. Earlier notifications are preserved separately below as an archive.
+        </p>
+      </div>
+      <aside class="hero-card">
+        <div class="big">01</div>
+        <small>Priority notification currently highlighted</small>
+        <div class="big" style="margin-top:20px">37</div>
+        <small>Previous notifications preserved</small>
+      </aside>
+    </div>
+  </section>
+
+  <div class="toolbar">
+    <div class="container toolbar-inner">
+      <input id="search" class="search" type="search" placeholder="Search exam, institute, course or keyword…" aria-label="Search notifications">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="priority">Priority</button>
+      <button class="filter-btn" data-filter="archive">Archive</button>
+    </div>
   </div>
 
   <div class="container">
-    <!-- Header -->
-    <header style="text-align:center;margin-bottom:40px;">
-      <h1 class="white-title">Exam Notification 2025</h1>
-      <p class="glowing-subtitle">This isn’t news. It’s your calling</p>
-    </header>
+    <section id="priority">
+      <div class="section-head">
+        <div>
+          <h2>⭐ Priority Notifications</h2>
+          <p>Newly added information appears here first.</p>
+        </div>
+      </div>
 
-
-    <!-- IIM Bangalore UG Admissions 2026-27 Section -->
-<section id="iimb-ug" class="card">
+      <div id="priority-list" class="priority-wrap">
+        <section id="iimb-ug" class="card">
 
   <h2>IIM Bangalore UG Admissions 2026-27 – B.Sc. (Hons.) Economics & Data Science</h2>
 
@@ -476,7 +522,27 @@ Engineering (AEEE) ↓</a> |
 </section>
 
     <!-- NFSC B.Tech Fire Engineering 2026 Section -->
-<section id="nfsc-btech-2026" class="card">
+
+      </div>
+    </section>
+
+    <section id="archive">
+      <div class="section-head">
+        <div>
+          <h2>Previous Notifications</h2>
+          <p>Earlier exam notifications are preserved without removing their information.</p>
+        </div>
+      </div>
+
+      <div id="archive-list" class="archive-grid">
+        
+    <details class="archive-item" data-search="nfsc b.tech fire engineering 2026 – national fire service college, nagpur">
+      <summary>
+        <span class="archive-title">NFSC B.Tech Fire Engineering 2026 – National Fire Service College, Nagpur</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="nfsc-btech-2026" class="card">
   <h2>NFSC B.Tech Fire Engineering 2026 – National Fire Service College, Nagpur</h2>
 
   <p>
@@ -586,7 +652,18 @@ Engineering (AEEE) ↓</a> |
 </section>
 
     <!-- SVNIRTAR CET 2026 Section -->
-<section id="svnirtar-cet-2026" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="svnirtar cet 2026 – common entrance test">
+      <summary>
+        <span class="archive-title">SVNIRTAR CET 2026 – Common Entrance Test</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="svnirtar-cet-2026" class="card">
   <h2>SVNIRTAR CET 2026 – Common Entrance Test</h2>
 
   <p>
@@ -684,7 +761,18 @@ Engineering (AEEE) ↓</a> |
   </p>
 </section>
     <!-- IIM Lucknow BS (AI & BA) 2026 Section -->
-<section id="iiml-bs-ai-2026" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="iim lucknow bs (ai &amp; ba) 2026 – bachelor of science in artificial intelligence &amp; business analytics">
+      <summary>
+        <span class="archive-title">IIM Lucknow BS (AI &amp; BA) 2026 – Bachelor of Science in Artificial Intelligence &amp; Business Analytics</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="iiml-bs-ai-2026" class="card">
   <h2>IIM Lucknow BS (AI & BA) 2026 – Bachelor of Science in Artificial Intelligence & Business Analytics</h2>
 
   <p>
@@ -773,7 +861,18 @@ Engineering (AEEE) ↓</a> |
 
 
 <!-- NIMHANS UG Calendar of Activity 2025-26 Section -->
-<section id="nimhans-ug-calendar-2026" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="nimhans ug admissions 2025–26 – b.sc. &amp; ccnt courses">
+      <summary>
+        <span class="archive-title">NIMHANS UG Admissions 2025–26 – B.Sc. &amp; CCNT Courses</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="nimhans-ug-calendar-2026" class="card">
   <h2>NIMHANS UG Admissions 2025–26 – B.Sc. & CCNT Courses</h2>
 
   <p>
@@ -856,7 +955,18 @@ Engineering (AEEE) ↓</a> |
 </section>
     
     <!-- AIISH Entrance Examination 2026 Section -->
-<section id="aiish-2026" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="aiish entrance examination 2026 – all india institute of speech and hearing">
+      <summary>
+        <span class="archive-title">AIISH Entrance Examination 2026 – All India Institute of Speech and Hearing</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="aiish-2026" class="card">
   <h2>AIISH Entrance Examination 2026 – All India Institute of Speech and Hearing</h2>
 
   <p>
@@ -941,7 +1051,18 @@ Engineering (AEEE) ↓</a> |
 </section>
 
     <!-- JIPMAT 2026 Section -->
-<section id="jipmat" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="jipmat 2026 – joint integrated programme in management admission test">
+      <summary>
+        <span class="archive-title">JIPMAT 2026 – Joint Integrated Programme in Management Admission Test</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="jipmat" class="card">
 
   <h2>JIPMAT 2026 – Joint Integrated Programme in Management Admission Test</h2>
 
@@ -1016,7 +1137,18 @@ Engineering (AEEE) ↓</a> |
 </section>
 
     <!-- AIIMS B.Sc Allied & Health Care Courses 2026 -->
-<section id="bsc-allied" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="aiims b.sc allied &amp; health care courses 2026">
+      <summary>
+        <span class="archive-title">AIIMS B.Sc Allied &amp; Health Care Courses 2026</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="bsc-allied" class="card">
 
   <h2>AIIMS B.Sc Allied & Health Care Courses 2026</h2>
 
@@ -1098,7 +1230,18 @@ Engineering (AEEE) ↓</a> |
 
 
     <!-- CMC Vellore Summer Admissions 2026 Section -->
-<section id="cmc-vellore-summer-2026" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="cmc vellore summer admissions 2026">
+      <summary>
+        <span class="archive-title">CMC Vellore Summer Admissions 2026</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="cmc-vellore-summer-2026" class="card">
   <h2>CMC Vellore Summer Admissions 2026</h2>
   <p>Christian Medical College (CMC), Vellore has released the official <strong>Summer Admissions 2026 Bulletin</strong>. Admissions are open for Group A (BSc Nursing & Allied Health Degree Courses) and Group B (Diploma & PG Diploma Courses). The application process is completely online through the official portal <a href="http://admissions.cmcvellore.ac.in" target="_blank">admissions.cmcvellore.ac.in</a>. (Updated on 24th February 2026)</p>
 
@@ -1169,7 +1312,18 @@ Engineering (AEEE) ↓</a> |
   </p>
 </section>
     <!-- ISI Admission 2026 Section -->
-<section id="isi-admission-2026" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="isi admission 2026 – indian statistical institute">
+      <summary>
+        <span class="archive-title">ISI Admission 2026 – Indian Statistical Institute</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="isi-admission-2026" class="card">
   <h2>ISI Admission 2026 – Indian Statistical Institute</h2>
   <p>The Indian Statistical Institute (ISI) conducts its annual Admission Test for various Undergraduate, Postgraduate, and diploma programmes. The official admissions portal is <a href="https://admission.isical.ac.in/" target="_blank">admission.isical.ac.in</a>, where candidates can apply for courses such as B.Stat, B.Math, M.Stat, M.Math, MS, M.Tech and more. </p>
 
@@ -1209,7 +1363,18 @@ Engineering (AEEE) ↓</a> |
   <p class="lead">For official notifications, syllabus, eligibility criteria and to apply, visit the <a href="https://admission.isical.ac.in/" target="_blank">ISI Admissions Portal</a>. </p>
 </section>
     <!-- JMI Admission 2026-27 Section -->
-<section id="jmi-admission-2026" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="jamia millia islamia (jmi) admission 2026-27">
+      <summary>
+        <span class="archive-title">Jamia Millia Islamia (JMI) Admission 2026-27</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="jmi-admission-2026" class="card">
   <h2>Jamia Millia Islamia (JMI) Admission 2026-27</h2>
   <p>Jamia Millia Islamia (JMI) has opened online admissions for the academic session 2026-27. The university is offering various undergraduate, postgraduate, diploma, certificate, and advanced diploma programmes, including new courses introduced under the Four-Year Undergraduate Programme (FYUP). Admissions are conducted through the official JMI admission portal at <a href="https://admission.jmi.ac.in/" target="_blank">admission.jmi.ac.in</a>. </p>
 
@@ -1242,7 +1407,18 @@ Engineering (AEEE) ↓</a> |
 </section>
 
     <!-- AMU Entrance Exam 2026 Section -->
-<section id="amu-admissions-2026" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="amu admission test 2026 – aligarh muslim university">
+      <summary>
+        <span class="archive-title">AMU Admission Test 2026 – Aligarh Muslim University</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="amu-admissions-2026" class="card">
   <h2>AMU Admission Test 2026 – Aligarh Muslim University</h2>
   <p>The Aligarh Muslim University (AMU) conducts its Entrance/Admission Test for the Academic Session 2026-27 for various undergraduate, postgraduate, diploma and professional programmes. Application details and the admission guide are released through the Office of the Controller of Examinations. </p>
 
@@ -1275,7 +1451,18 @@ Engineering (AEEE) ↓</a> |
 </section>
 
     <!-- IIM Kozhikode BMS 2026 Section -->
-<section id="iimk-bms-2026" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="iim kozhikode bms 2026 – bachelor of management studies (bms)">
+      <summary>
+        <span class="archive-title">IIM Kozhikode BMS 2026 – Bachelor of Management Studies (BMS)</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="iimk-bms-2026" class="card">
   <h2>IIM Kozhikode BMS 2026 – Bachelor of Management Studies (BMS)</h2>
   <p>The Bachelor of Management Studies (BMS) 2026 admissions at Indian Institute of Management Kozhikode (IIMK) are open for the four-year undergraduate programme with a focus on management and interdisciplinary learning. Applications are accepted online through the official IIMK BMS admissions webpage. :contentReference[oaicite:0]{index=0}</p>
 
@@ -1304,7 +1491,18 @@ Engineering (AEEE) ↓</a> |
   <p class="lead">For official notifications, application links, syllabus and detailed admission instructions, visit the <a href="https://iimk.ac.in/academic-programmes/BMS/bms-key-dates" target="_blank">IIM Kozhikode BMS 2026 key dates page</a>. </p>
 </section>
     <!-- NCET 2026 Section -->
-<section id="ncet-2026" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="ncet 2026 – national common entrance test">
+      <summary>
+        <span class="archive-title">NCET 2026 – National Common Entrance Test</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="ncet-2026" class="card">
   <h2>NCET 2026 – National Common Entrance Test</h2>
   <p>The National Common Entrance Test (NCET) 2026 is conducted by the National Testing Agency (NTA) for admission to the four-year Integrated Teacher Education Programme (ITEP) offered by various universities and institutions including Central and State universities, IITs, NITs, RIEs, and Government Colleges. The official portal for the exam is <a href="https://exams.nta.nic.in/ncet/" target="_blank">exams.nta.nic.in/ncet</a>. </p>
 
@@ -1347,7 +1545,18 @@ Engineering (AEEE) ↓</a> |
 
 
     <!-- IIM Rohtak IPM 2026 Section -->
-<section id="iim-rohtak-ipm-2026" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="iim rohtak ipm 2026 – integrated programme in management">
+      <summary>
+        <span class="archive-title">IIM Rohtak IPM 2026 – Integrated Programme in Management</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="iim-rohtak-ipm-2026" class="card">
   <h2>IIM Rohtak IPM 2026 – Integrated Programme in Management</h2>
   <p>The Integrated Programme in Management (IPM) 2026–31 at Indian Institute of Management Rohtak is a five-year dual degree programme (BBA + MBA). Admissions are through the IPM Aptitude Test (IPM AT) conducted by IIM Rohtak. </p>
 
@@ -1376,7 +1585,18 @@ Engineering (AEEE) ↓</a> |
 </section>
 
     <!-- NISER Admission 2026 Section -->
-<section id="niser-admission-2026" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="niser admission 2026 – national institute of science education and research">
+      <summary>
+        <span class="archive-title">NISER Admission 2026 – National Institute of Science Education and Research</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="niser-admission-2026" class="card">
   <h2>NISER Admission 2026 – National Institute of Science Education and Research</h2>
   <p>The National Institute of Science Education and Research (NISER), Bhubaneswar offers a five-year integrated M.Sc. programme in basic sciences. Admission to the programme for 2026 is through the National Entrance Screening Test (NEST) 2026, a national computer-based entrance examination for Science students. </p>
 
@@ -1406,7 +1626,18 @@ Engineering (AEEE) ↓</a> |
 
 
     <!-- IISER Admission 2026 Section -->
-<section id="iiser-admissions-2026" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="iiser admission 2026 – indian institutes of science education and research">
+      <summary>
+        <span class="archive-title">IISER Admission 2026 – Indian Institutes of Science Education and Research</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="iiser-admissions-2026" class="card">
   <h2>IISER Admission 2026 – Indian Institutes of Science Education and Research</h2>
   <p>The IISER Admission 2026 process, conducted through the official portal <a href="https://www.iiseradmission.in/" target="_blank">iiseradmission.in</a>, is for undergraduate science programmes including 5-Year BS-MS Dual Degree, 4-Year BS degree and related programmes. Admissions are based primarily on the IISER Aptitude Test (IAT) 2026.</p>
 
@@ -1437,7 +1668,18 @@ Engineering (AEEE) ↓</a> |
 
 
 <!-- IIM Indore IPM 2026-31 Section -->
-<section id="iim-indore-ipm-2026" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="iim indore ipm 2026 – five-year integrated programme in management">
+      <summary>
+        <span class="archive-title">IIM Indore IPM 2026 – Five-Year Integrated Programme in Management</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="iim-indore-ipm-2026" class="card">
   <h2>IIM Indore IPM 2026 – Five-Year Integrated Programme in Management</h2>
   <p>The Indian Institute of Management Indore (IIM Indore) offers a Five-Year Integrated Programme in Management (IPM) for the batch 2026-31. Admissions are based on the Integrated Programme in Management Aptitude Test (IPM AT/IPMAT) followed by further selection stages.</p>
 
@@ -1467,7 +1709,18 @@ Engineering (AEEE) ↓</a> |
 
     
     <!-- NEET UG 2026 Section -->
-<section id="neet-ug-2026" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="neet ug 2026 – national eligibility cum entrance test (undergraduate)">
+      <summary>
+        <span class="archive-title">NEET UG 2026 – National Eligibility cum Entrance Test (Undergraduate)</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="neet-ug-2026" class="card">
   <h2>NEET UG 2026 – National Eligibility cum Entrance Test (Undergraduate)</h2>
   <p>The National Eligibility cum Entrance Test Undergraduate (NEET UG) 2026 is conducted by the National Testing Agency (NTA) for admission to MBBS, BDS, AYUSH and other undergraduate medical and allied health science programmes across India. The official website for the exam is <a href="https://neet.nta.nic.in/" target="_blank">neet.nta.nic.in</a>.</p>
 
@@ -1497,7 +1750,18 @@ Engineering (AEEE) ↓</a> |
 
     
     <!-- CUSAT CAT 2026 Section -->
-<section id="cusat-cat-2026" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="cusat cat 2026 – cochin university of science and technology common admission test">
+      <summary>
+        <span class="archive-title">CUSAT CAT 2026 – Cochin University of Science and Technology Common Admission Test</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="cusat-cat-2026" class="card">
   <h2>CUSAT CAT 2026 – Cochin University of Science and Technology Common Admission Test</h2>
   <p>The CUSAT Common Admission Test (CAT) 2026 is conducted by the Cochin University of Science and Technology (CUSAT) for admission into Undergraduate, Postgraduate, and other academic programmes. Candidates must register and apply online through the official CUSAT admissions portal at <a href="https://admissions.cusat.ac.in/" target="_blank">admissions.cusat.ac.in</a>. </p>
 
@@ -1528,7 +1792,18 @@ Engineering (AEEE) ↓</a> |
 
 
 <!-- KCET 2026 Section -->
-<section id="kcet-2026" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="kcet 2026 – karnataka common entrance test">
+      <summary>
+        <span class="archive-title">KCET 2026 – Karnataka Common Entrance Test</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="kcet-2026" class="card">
   <h2>KCET 2026 – Karnataka Common Entrance Test</h2>
   <p>The Karnataka Common Entrance Test (KCET) 2026 is conducted by the Karnataka Examinations Authority (KEA) for admission to undergraduate professional courses in Engineering, Agriculture, Pharmacy and other streams in colleges across Karnataka. Candidates can apply online via the official KCET portal.</p>
 
@@ -1555,7 +1830,18 @@ Engineering (AEEE) ↓</a> |
 
     
     <!-- KEAM 2026 Section -->
-<section id="keam-2026" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="keam 2026 – kerala engineering, architecture &amp; medical entrance exam">
+      <summary>
+        <span class="archive-title">KEAM 2026 – Kerala Engineering, Architecture &amp; Medical Entrance Exam</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="keam-2026" class="card">
   <h2>KEAM 2026 – Kerala Engineering, Architecture & Medical Entrance Exam</h2>
   <p>The KEAM (Kerala Engineering, Architecture and Medical) 2026 entrance examination is conducted by the Commissioner for Entrance Examinations (CEE), Kerala for admission to various professional degree courses including Engineering, Pharmacy, Architecture, Medical-related programmes and allied courses across Kerala. </p>
 
@@ -1584,7 +1870,18 @@ Engineering (AEEE) ↓</a> |
 
 
     <!-- CUET UG 2026 Section -->
-<section id="cuet-ug-2026" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="cuet (ug) 2026 – common university entrance test">
+      <summary>
+        <span class="archive-title">CUET (UG) 2026 – Common University Entrance Test</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="cuet-ug-2026" class="card">
   <h2>CUET (UG) 2026 – Common University Entrance Test</h2>
   <p>
     The Common University Entrance Test (CUET UG) 2026 is conducted by the National Testing Agency (NTA)
@@ -1628,7 +1925,18 @@ Engineering (AEEE) ↓</a> |
 </section>
 
 <!-- Indian Navy Recruitment Section -->
-<section id="indian-navy" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="indian navy recruitment – (ssc)">
+      <summary>
+        <span class="archive-title">Indian Navy Recruitment – (SSC)</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="indian-navy" class="card">
   <h2>Indian Navy Recruitment –  (SSC)</h2>
   <p>The Indian Navy invites applications from eligible candidates for (SSC) entry in various branches. This recruitment offers an opportunity to serve the nation in Executive, Technical, and Education roles through a prestigious selection process.</p>
 
@@ -1655,7 +1963,19 @@ Engineering (AEEE) ↓</a> |
 
 
     <!-- NCHM JEE 2026 Section -->
-<section id="nchmjee" class="card">
+</section>
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="nchm jee 2026 – national council for hotel management joint entrance examination">
+      <summary>
+        <span class="archive-title">NCHM JEE 2026 – National Council for Hotel Management Joint Entrance Examination</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="nchmjee" class="card">
   <h2>NCHM JEE 2026 – National Council for Hotel Management Joint Entrance Examination</h2>
   <p>The National Council for Hotel Management Joint Entrance Examination (NCHM JEE) 2026 is conducted by the National Testing Agency (NTA) for admission into undergraduate hospitality programmes, primarily B.Sc. in Hospitality & Hotel Administration, across Institutes of Hotel Management affiliated with NCHMCT and recognised by JNU.</p>
 
@@ -1677,7 +1997,18 @@ Engineering (AEEE) ↓</a> |
 </section>
 
 <!-- Manipal Entrance Exam 2026 Section -->
-<section id="manipal-exam" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="manipal entrance exam 2026 – manipal academy of higher education (mahe)">
+      <summary>
+        <span class="archive-title">Manipal Entrance Exam 2026 – Manipal Academy of Higher Education (MAHE)</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="manipal-exam" class="card">
   <h2>Manipal Entrance Exam 2026 – Manipal Academy of Higher Education (MAHE)</h2>
   <p>
     Manipal conducts its own online entrance test (commonly known as MET / MU-OET or Online Entrance Exam) for admission to undergraduate programmes across MAHE campuses. Admissions may also accept JEE Main scores for some programmes—check the programme page for exact selection modes.
@@ -1735,7 +2066,18 @@ Engineering (AEEE) ↓</a> |
 
     
     <!-- Amrita AEEE 2026 Section -->
-<section id="amrita-aeee" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="amrita aeee 2026 – amrita entrance examination – engineering (aeee)">
+      <summary>
+        <span class="archive-title">Amrita AEEE 2026 – Amrita Entrance Examination – Engineering (AEEE)</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="amrita-aeee" class="card">
   <h2>Amrita AEEE 2026 – Amrita Entrance Examination – Engineering (AEEE)</h2>
   <p>
     AEEE is the national-level computer-based test for B.Tech admissions to Amrita Vishwa Vidyapeetham (multiple campuses). Admissions are also offered on the basis of JEE Main percentile for candidates who choose that route.
@@ -1796,7 +2138,18 @@ Engineering (AEEE) ↓</a> |
 
 
     <!-- LPU Brand / Admissions 2026 Section -->
-<section id="lpu-brand" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="lpu admissions 2026 – lovely professional university (lpu)">
+      <summary>
+        <span class="archive-title">LPU Admissions 2026 – Lovely Professional University (LPU)</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="lpu-brand" class="card">
   <h2>LPU Admissions 2026 – Lovely Professional University (LPU)</h2>
   <p>
     Lovely Professional University (LPU) offers a wide range of undergraduate, postgraduate and research programmes across engineering, management, law, design, applied sciences, hospitality, agriculture, and more. Admissions are through LPU’s own entrance test (LPUNEST) or via accepted national-level examinations depending on the programme and intake.
@@ -1840,7 +2193,18 @@ Engineering (AEEE) ↓</a> |
 </section>
 
     <!-- UPES Brand / Admissions 2026 Section -->
-<section id="upes-brand" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="upes admissions 2026 – university of petroleum and energy studies (upes)">
+      <summary>
+        <span class="archive-title">UPES Admissions 2026 – University of Petroleum and Energy Studies (UPES)</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="upes-brand" class="card">
   <h2>UPES Admissions 2026 – University of Petroleum and Energy Studies (UPES)</h2>
   <p>
     UPES (Dehradun) offers multidisciplinary UG, PG and research programmes with industry-integrated curricula across Engineering, Management, Design, Law, Health Sciences and more. The university highlights industry tie-ups, world-class infrastructure, and scholarship opportunities. 
@@ -1884,7 +2248,18 @@ Engineering (AEEE) ↓</a> |
 </section>
 
 <!-- Amity Admissions / Amity Entrance Test 2026 Section -->
-<section id="amity-admissions" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="amity university admissions 2026 – amity entrance tests &amp; eligibility">
+      <summary>
+        <span class="archive-title">Amity University Admissions 2026 – Amity Entrance Tests &amp; Eligibility</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="amity-admissions" class="card">
   <h2>Amity University Admissions 2026 – Amity Entrance Tests & Eligibility</h2>
   <p>
     Amity University conducts its own admission process for undergraduate and postgraduate programmes across multiple campuses in India and abroad. Admissions are offered on the basis of Amity’s entrance tests, institutional criteria, and/or accepted national examination scores (where applicable).  
@@ -1933,7 +2308,18 @@ Engineering (AEEE) ↓</a> |
 
     
 <!-- NID DAT 2026 Section -->
-<section id="nid-dat" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="nid dat 2026 – design aptitude test">
+      <summary>
+        <span class="archive-title">NID DAT 2026 – Design Aptitude Test</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="nid-dat" class="card">
   <h2>NID DAT 2026 – Design Aptitude Test</h2>
   <p>
     The entrance examination for the National Institute of Design’s B.Des and M.Des programmes — conducted by NID via the DAT (Design Aptitude Test) for admission into their multiple campuses.  
@@ -1979,7 +2365,18 @@ Engineering (AEEE) ↓</a> |
 
     
 <!-- UPES Entrance Test 2026 Section -->
-<section id="upes-test" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="upes entrance test 2026 – upes admission examinations">
+      <summary>
+        <span class="archive-title">UPES Entrance Test 2026 – UPES Admission Examinations</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="upes-test" class="card">
   <h2>UPES Entrance Test 2026 – UPES Admission Examinations</h2>
   <p>
     UPES conducts its own admission tests (such as UPESEAT, UPESDAT, UPESMET-UG, etc.) for various undergraduate and postgraduate programs at UPES, Dehradun.  
@@ -2017,7 +2414,18 @@ Engineering (AEEE) ↓</a> |
 
     
     <!-- BITSDAT 2026 Section -->
-<section id="bitsdat" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="bitsdat 2026 – bits design aptitude test">
+      <summary>
+        <span class="archive-title">BITSDAT 2026 – BITS Design Aptitude Test</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="bitsdat" class="card">
   <h2>BITSDAT 2026 – BITS Design Aptitude Test</h2>
   <p>
     The BITSDAT (Bachelor of Design Admissions) is conducted by Birla Institute of Technology & Science, Pilani – Mumbai Campus (BITS Pilani – Mumbai) via its Design School for the four-year B.Des (Honours) programme offered by BITS Design School. 
@@ -2054,7 +2462,18 @@ Engineering (AEEE) ↓</a> |
 
 
     <!-- JEE Main 2026 Section -->
-<section id="jeemain" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="jee main 2026 – joint entrance examination (main)">
+      <summary>
+        <span class="archive-title">JEE Main 2026 – Joint Entrance Examination (Main)</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="jeemain" class="card">
   <h2>JEE Main 2026 – Joint Entrance Examination (Main)</h2>
   <p>
     The Joint Entrance Examination (Main), conducted by the <strong>National Testing Agency (NTA)</strong>, is the 
@@ -2117,7 +2536,18 @@ Engineering (AEEE) ↓</a> |
 
 
     <!-- UCEED 2026 Section -->
-<section id="uceed" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="uceed 2026 – undergraduate common entrance examination for design">
+      <summary>
+        <span class="archive-title">UCEED 2026 – Undergraduate Common Entrance Examination for Design</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="uceed" class="card">
   <h2>UCEED 2026 – Undergraduate Common Entrance Examination for Design</h2>
   <p>The UCEED (Undergraduate Common Entrance Examination for Design) 2026 is conducted by IIT Bombay for admission to BDes programmes in design. Applications are open and the exam is scheduled for January 2026.</p>
 
@@ -2140,7 +2570,18 @@ Engineering (AEEE) ↓</a> |
 
 
     <!-- VITEEE 2026 Section -->
-<section id="viteee" class="card">
+
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="viteee 2026 – vit engineering entrance examination">
+      <summary>
+        <span class="archive-title">VITEEE 2026 – VIT Engineering Entrance Examination</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="viteee" class="card">
   <h2>VITEEE 2026 – VIT Engineering Entrance Examination</h2>
   <p>
     VITEEE (VIT Engineering Entrance Examination) is conducted by Vellore Institute of Technology (VIT) for admission 
@@ -2191,7 +2632,18 @@ Engineering (AEEE) ↓</a> |
 
 
     <!-- IIM Bangalore Section -->
-    <section id="iimb" class="card">
+    
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="iim bangalore – new undergraduate programs">
+      <summary>
+        <span class="archive-title">IIM Bangalore – New Undergraduate Programs</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="iimb" class="card">
       <h2>IIM Bangalore – New Undergraduate Programs</h2>
       <p>IIM Bangalore’s new Undergraduate Programs (BSc Honours - Economics and BSc Honours - Data Science) will start admissions in the third week of October 2025, with classes beginning in August 2026.</p>
 
@@ -2217,7 +2669,18 @@ Engineering (AEEE) ↓</a> |
     </section>
 
     <!-- CLAT Section -->
-    <section id="clat" class="card">
+    
+      </div>
+    </details>
+    
+
+    <details class="archive-item" data-search="clat 2025 exam notification">
+      <summary>
+        <span class="archive-title">CLAT 2025 Exam Notification</span>
+        <span class="archive-arrow">+</span>
+      </summary>
+      <div class="archive-content">
+        <section id="clat" class="card">
       <h2>CLAT 2025 Exam Notification</h2>
       <ul class="meta">
         <li><strong>Exam Date:</strong> December 7, 2025 (Sunday) </li>
@@ -2257,34 +2720,83 @@ Engineering (AEEE) ↓</a> |
     
     </section>
 
-    <footer>
-      <div>© 2025 Exam Notification Portal | Designed for quick academic updates | <a href="https://shameempk123.github.io/Personal-Website/" target="_blank"> PK </a></div>
+    
+      </div>
+    </details>
+    
+      </div>
+      <div id="empty" class="empty">No notification matched your search.</div>
+    </section>
+
+    <footer id="footer">
+      <div>© 2026 Exam Notification Portal | Designed for quick academic updates | <a href="https://shameempk123.github.io/Personal-Website/" target="_blank" rel="noopener">PK</a></div>
     </footer>
-
-    <div id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'});">↑ Top</div>
-
-    <script>
-      // Back to Top button
-      const backToTop = document.getElementById('backToTop');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) backToTop.style.display = 'block';
-        else backToTop.style.display = 'none';
-      });
-
-      // Scroll Reveal for Course Cards
-      const revealElements = document.querySelectorAll('.scroll-reveal');
-      const revealOnScroll = () => {
-        const windowHeight = window.innerHeight;
-        revealElements.forEach(el => {
-          const elementTop = el.getBoundingClientRect().top;
-          if (elementTop < windowHeight - 50) {
-            el.classList.add('visible');
-          }
-        });
-      };
-      window.addEventListener('scroll', revealOnScroll);
-      window.addEventListener('load', revealOnScroll);
-    </script>
   </div>
+</main>
+
+<button id="backToTop" aria-label="Back to top">↑ Top</button>
+
+<script>
+const searchInput = document.getElementById('search');
+const filterButtons = [...document.querySelectorAll('.filter-btn')];
+const priorityWrap = document.getElementById('priority-list');
+const archiveList = document.getElementById('archive-list');
+const empty = document.getElementById('empty');
+let currentFilter = 'all';
+
+function searchableText(el) {
+  return (el.innerText || '').toLowerCase();
+}
+
+function applyFilters() {
+  const q = searchInput.value.trim().toLowerCase();
+  const priorityMatch = currentFilter === 'all' || currentFilter === 'priority';
+  const archiveMatch = currentFilter === 'all' || currentFilter === 'archive';
+
+  priorityWrap.style.display = priorityMatch ? '' : 'none';
+  archiveList.style.display = archiveMatch ? '' : 'none';
+
+  let visible = 0;
+
+  if (priorityMatch) {
+    const sections = priorityWrap.querySelectorAll('section');
+    sections.forEach(s => {
+      const ok = !q || searchableText(s).includes(q);
+      s.style.display = ok ? '' : 'none';
+      if (ok) visible++;
+    });
+  }
+
+  if (archiveMatch) {
+    archiveList.querySelectorAll('.archive-item').forEach(item => {
+      const ok = !q || searchableText(item).includes(q);
+      item.style.display = ok ? '' : 'none';
+      if (ok) visible++;
+      if (q && ok) item.open = true;
+    });
+  }
+
+  empty.style.display = visible ? 'none' : 'block';
+}
+
+searchInput.addEventListener('input', applyFilters);
+
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    applyFilters();
+  });
+});
+
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.style.display = window.scrollY > 450 ? 'block' : 'none';
+});
+backToTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+applyFilters();
+</script>
 </body>
 </html>
